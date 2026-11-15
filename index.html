@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Frog Jump</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="c"></canvas>
+  <div id="hud" class="hidden">
+    <div class="box" id="hearts"></div>
+    <div class="box mid"><small id="stg">STAGE 1</small><b id="scr">0 m</b></div>
+  </div>
+  <div id="bossbar" class="hidden"><span id="bbname">BOSS</span><div><i id="bbfill"></i></div></div>
+  <div id="tl" class="zone hidden"></div><div id="tr" class="zone hidden"></div>
+  <button id="fire" class="hidden">★</button>
+
+  <section id="menu" class="ov">
+    <h1>FROG<br>JUMP</h1>
+    <input id="nick" maxlength="14" placeholder="Nickname">
+    <button class="btn" id="play">PLAY</button>
+    <button class="btn blue" id="top">TOP 100</button>
+  </section>
+
+  <section id="over" class="ov hidden">
+    <h2 id="otitle">GAME OVER</h2>
+    <div class="card"><p>Height <b id="oh">0</b></p><p>Best <b id="ob">0</b></p><p>Kills <b id="ok">0</b></p></div>
+    <button class="btn" id="again">AGAIN</button>
+    <button class="btn blue" id="tomenu">MENU</button>
+  </section>
+
+  <section id="lb" class="ov hidden">
+    <h2>TOP 100</h2>
+    <ol id="lblist"></ol>
+    <button class="btn blue" id="lbclose">BACK</button>
+  </section>
+</div>
+<script src="js/config.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
