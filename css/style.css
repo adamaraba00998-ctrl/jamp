@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@800;900&display=swap');
+:root{--ink:#16121a;--y:#ffd60a;--g:#8ac926;--r:#ff3b4e;--b:#2aa0e8;--cream:#fffdf2}
+*{box-sizing:border-box;margin:0;padding:0;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;touch-action:none}
+body{height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden;font-family:'Nunito',sans-serif;
+ background:#0e0c14 radial-gradient(rgba(255,214,10,.12) 2px,transparent 2px) 0 0/14px 14px}
+#app{position:relative;height:min(100vh,100vw*1.75);aspect-ratio:400/700;border:5px solid var(--ink);border-radius:6px;box-shadow:0 0 0 3px var(--y),0 20px 60px #000;overflow:hidden;background:#222}
+canvas{width:100%;height:100%;display:block}
+.hidden{display:none!important}
+#hud{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;z-index:5}
+.box{background:var(--cream);border:3.5px solid var(--ink);border-radius:12px;padding:4px 10px;box-shadow:4px 4px 0 var(--ink);font-size:20px;transform:rotate(-1.5deg)}
+.box.mid{transform:rotate(1.5deg);text-align:right;background:var(--y)}
+.box small{display:block;font:900 10px Nunito;letter-spacing:1px}
+.box b{font:400 26px Bangers;letter-spacing:1px}
+#bossbar{position:absolute;top:62px;left:50%;transform:translateX(-50%);width:80%;z-index:5;text-align:center;font:400 18px Bangers;color:#fff;text-shadow:2px 2px 0 var(--ink);-webkit-text-stroke:1px var(--ink);letter-spacing:2px}
+#bossbar div{height:16px;background:#2a0a10;border:3px solid var(--ink);border-radius:9px;overflow:hidden;box-shadow:3px 3px 0 var(--ink)}
+#bbfill{display:block;height:100%;width:100%;background:repeating-linear-gradient(45deg,var(--r) 0 8px,#ff7a85 8px 16px);transition:width .15s}
+.zone{position:absolute;bottom:0;height:70%;width:50%;z-index:3}#tl{left:0}#tr{right:0}
+#fire{position:absolute;right:14px;bottom:18px;width:78px;height:78px;border-radius:50%;z-index:6;border:5px solid var(--ink);background:var(--y);
+ font:400 40px Bangers;color:var(--ink);box-shadow:5px 5px 0 var(--ink);transform:rotate(-8deg)}
+#fire:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.ov{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;
+ background:rgba(14,10,22,.78) radial-gradient(rgba(0,0,0,.35) 2px,transparent 2px) 0 0/9px 9px;backdrop-filter:blur(3px)}
+h1{font:400 92px/.9 Bangers;text-align:center;color:var(--y);letter-spacing:3px;transform:rotate(-4deg);
+ -webkit-text-stroke:5px var(--ink);paint-order:stroke fill;text-shadow:6px 6px 0 var(--ink),0 0 30px rgba(255,214,10,.5);margin-bottom:10px}
+h1::first-line{color:var(--g)}
+h2{font:400 54px Bangers;color:var(--r);-webkit-text-stroke:4px var(--ink);paint-order:stroke fill;text-shadow:5px 5px 0 var(--ink);transform:rotate(-3deg);letter-spacing:2px}
+.btn{width:220px;padding:10px;font:400 30px Bangers;letter-spacing:2px;color:var(--ink);background:var(--g);border:4.5px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);cursor:pointer;transform:rotate(1deg)}
+.btn.blue{background:var(--b);color:#fff;-webkit-text-stroke:1px var(--ink);transform:rotate(-1deg)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+input{width:220px;padding:9px;text-align:center;font:900 16px Nunito;border:4px solid var(--ink);border-radius:12px;background:var(--cream);box-shadow:4px 4px 0 var(--ink)}
+.card{background:var(--cream);border:4px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);padding:12px 26px;font-weight:900;min-width:220px}
+.card p{display:flex;justify-content:space-between;gap:20px;padding:3px 0}.card b{font:400 24px Bangers}
+ol{list-style:none;width:100%;flex:1;overflow-y:auto;touch-action:pan-y;background:var(--cream);border:4px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:8px 12px;counter-reset:n}
+ol li{counter-increment:n;display:flex;justify-content:space-between;font-weight:900;padding:5px 0;border-bottom:2px dashed #bbb}
+ol li::before{content:counter(n);width:28px;font:400 18px Bangers;color:var(--r)}ol li span{flex:1}
